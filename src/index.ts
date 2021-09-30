@@ -75,9 +75,6 @@ const loop = () => {
 			addVideo(scene, videoMuted1, false, -1, 1)
 
 			// muted video, manually calls play
-			// this is the only video that plays in headset:
-			// if we both preload the video *as muted*, and 
-			// explicitly call video.play() after entering WebXR.
 			addVideo(scene, videoMuted2, true, 1, 1)
 		}, 1000)
 	}

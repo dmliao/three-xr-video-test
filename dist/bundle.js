@@ -24882,11 +24882,13 @@
     const video = document.createElement("video");
     video.src = "/assets/video.mp4";
     if (withMute) {
-      video.muted = true;
+      video.defaultMuted = true;
       video.playsInline = true;
+      video.muted = true;
     }
     video.loop = true;
     video.autoplay = true;
+    video.play();
     video.hidden = true;
     document.body.appendChild(video);
     return video;
@@ -24950,7 +24952,7 @@
     if (renderer.xr.isPresenting && !hasAddedVideo) {
       hasAddedVideo = true;
       addVideo(scene, video1, false, -1);
-      addVideo(scene, video2, false, 1);
+      addVideo(scene, video2, true, 1);
       setTimeout(() => {
         addVideo(scene, videoMuted1, false, -1, 1);
         addVideo(scene, videoMuted2, true, 1, 1);
